@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=77,<83"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hearth-edge"
+version = "0.1.0"
+description = "HEARTH edge-first freshness research demonstrator"
+requires-python = ">=3.13"
+dependencies = ["fastapi>=0.128.2,<1", "pydantic>=2.13.4,<3", "uvicorn>=0.48,<1"]
+
+[project.optional-dependencies]
+test = ["pytest>=9,<10", "httpx>=0.28.1,<1", "jsonschema>=4.26,<5", "coverage>=7.13,<8"]
+visual = ["playwright>=1.57,<2"]
+audit = ["ruff>=0.14,<1", "bandit>=1.8,<2", "pip-audit>=2.9,<3"]
+
+[project.scripts]
+hearth = "hearth.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+hearth = ["*.sql", "*.html", "*.js", "*.css", "defaults.json"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501"]

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HEARTH | Edge lab</title><link rel="icon" href="data:,"><link rel="stylesheet" href="/assets/dashboard.css">
+<script src="/assets/dashboard.js" defer></script>
+</head>
+<body>
+<main>
+<header><span class="brand">HEARTH</span><span class="tag">EDGE LAB / 01</span></header>
+<section class="intro"><p class="eyebrow">THERMODYNAMIC FOOD GRID</p>
+<h1>Observe locally.<br>Keep the evidence.</h1>
+<p class="lede">Temperature history, quality estimates and edge-local alerts in one reproducible experiment.</p>
+</section>
+<aside class="notice"><strong>Synthetic research demonstration</strong><span>No food-safety certification. No sale approval. No measured carbon or waste savings.</span></aside>
+<section class="controls" aria-label="Simulation controls">
+<label>Local operator key<input id="api-key" type="password" autocomplete="off" placeholder="From your local credentials.json"></label>
+<label>Scenario<select id="scenario"><option value="normal">Baseline / 30 °C</option><option value="cooled">Cooling assumption / 25 °C</option><option value="heatwave">Heatwave / 36 °C</option><option value="outage">Sensor outage</option><option value="sensor_fault">Sensor fault</option></select></label>
+<button id="run" type="button">Run experiment</button>
+</section>
+<p id="message" role="status" aria-live="polite">Enter your local operator key to begin. The key stays in this page's memory.</p>
+<section class="metrics" aria-label="Experiment summary">
+<article><span>Final edge state</span><strong id="final-state">—</strong><small id="health">Awaiting experiment</small></article>
+<article><span>Conditional quality lifetime</span><strong id="lifetime">—</strong><small>Constant-temperature assumption</small></article>
+<article><span>25 °C / 30 °C lifetime ratio</span><strong id="ratio">—</strong><small>Model-derived, unvalidated</small></article>
+<article><span>Audit chain</span><strong id="ledger">—</strong><small id="event-count">No events generated</small></article>
+</section>
+<section class="plot-panel"><div class="section-title"><h2>Quality over time</h2><p>Solid: inferred thermal quality · Dashed: synthetic microbial quality</p></div>
+<svg id="plot" viewBox="0 0 960 290" role="img" aria-label="Inferred and synthetic quality versus elapsed hours"><text x="42" y="130">Run an experiment to display its timeline.</text></svg>
+<p class="plot-note">The two curves come from different models. This comparison does not establish accuracy on real food.</p>
+</section>
+<section><div class="section-title"><h2>State transitions</h2><p>Recorded reasons and sensor health</p></div>
+<div id="transitions" class="transitions"><p>No transition events yet.</p></div></section>
+<footer>Local decision engine → durable state + hash-linked audit → retryable cloud outbox<br>Power loss requires independent hardware backup. Cloud availability cannot restore power to an LED.</footer>
+</main>
+</body></html>

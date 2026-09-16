@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "mode": "demo",
+  "policy": {
+    "yellow_enter": 0.45, "yellow_exit": 0.55, "red_enter": 0.15,
+    "red_confirmations": 5, "warn_hours": 4.0, "stale_seconds": 90.0,
+    "future_skew_seconds": 30.0, "max_history_rows": 200000,
+    "max_pending_events": 250000
+  },
+  "metrics": {
+    "temperature_c": {"unit": "degC", "minimum": -80, "maximum": 100},
+    "relative_humidity_pct": {"unit": "percent", "minimum": 0, "maximum": 100},
+    "nh3_ppm": {"unit": "ppm", "minimum": 0, "maximum": 100000},
+    "co2_ppm": {"unit": "ppm", "minimum": 0, "maximum": 1000000},
+    "ethylene_ppm": {"unit": "ppm", "minimum": 0, "maximum": 100000}
+  },
+  "products": {
+    "demo_meat": {
+      "q10": 2.7, "reference_c": 4, "shelf_life_reference_h": 120,
+      "valid_min_c": 0, "valid_max_c": 45,
+      "gompertz_lag_eq_h": 12, "gompertz_max_rate": 0.05,
+      "log_count_initial": 2, "log_count_max": 9, "log_count_quality_limit": 7,
+      "parameter_status": "illustrative_unvalidated"
+    }
+  }
+}
